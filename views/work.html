@@ -1,0 +1,104 @@
+<link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/font/font.css">
+<link rel="stylesheet" href="/css/work.css">
+<link rel="stylesheet" href="/css/header/header.css"> 
+<div  data-include-path="inc/header.html"></div>
+
+
+    <div id="work">
+    <main>
+       <div class="itemBox">
+        <div class="wrapper">
+            <div id="item1" class="item" onclick="location.href='work/birthday.html'">
+                <div class="tit_wrapper" onclick="location.href='work/birthday.html'">
+                    <span class="item_tit_sub">Illustration</span>
+                    <h2 class="item_tit">Birthday</h2>
+                </div>
+            </div>
+            <div id="item2"  class="item" onclick="location.href='work/birthday.html'">
+                <div class="tit_wrapper">
+                    <span class="item_tit_sub">Illustration</span>
+                    <h2 class="item_tit">Birthday</h2>
+                </div>
+            </div>
+            <div id="item3"  class="item" onclick="location.href='work/birthday.html'">
+                <div class="tit_wrapper">
+                    <span class="item_tit_sub">Illustration</span>
+                    <h2 class="item_tit">Birthday</h2>
+                </div>
+            </div>
+            <div id="item4"  class="item" onclick="location.href='work/birthday.html'">
+                <div class="tit_wrapper">
+                    <span class="item_tit_sub">Illustration</span>
+                    <h2 class="item_tit">Birthday</h2>
+                </div>
+            </div>
+            <div id="item5"  class="item" onclick="location.href='work/birthday.html'">
+                <div class="tit_wrapper">
+                    <span class="item_tit_sub">Illustration</span>
+                    <h2 class="item_tit">Birthday</h2>
+                </div>
+            </div>
+            <div id="item6"  class="item" onclick="location.href='work/birthday.html'">
+                <div class="tit_wrapper">
+                    <span class="item_tit_sub">Illustration</span>
+                    <h2 class="item_tit">Birthday</h2>
+                </div>
+            </div>
+            <div id="item7"  class="item" onclick="location.href='work/birthday.html'">
+                <div class="tit_wrapper">
+                    <span class="item_tit_sub">Illustration</span>
+                    <h2 class="item_tit">Birthday</h2>
+                </div>
+            </div>
+            <div id="item8"  class="item" onclick="location.href='work/birthday.html'">
+                <div class="tit_wrapper">
+                    <span class="item_tit_sub">Illustration</span>
+                    <h2 class="item_tit">Birthday</h2>
+                </div>
+            </div>
+            <div id="item9"  class="item" onclick="location.href='work/birthday.html'">
+                <div class="tit_wrapper">
+                    <span class="item_tit_sub">Illustration</span>
+                    <h2 class="item_tit">Birthday</h2>
+                </div>
+            </div>
+            <div id="item10"  class="item" onclick="location.href='work/birthday.html'">
+                <div class="tit_wrapper">
+                    <span class="item_tit_sub">Illustration</span>
+                    <h2 class="item_tit">Birthday</h2>
+                </div>
+            </div>
+        </div>
+    </div> 
+    </main>
+    </div>
+    <script src="/js/includeHTML.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hi098123/prism-for-tistory/prism.js"></script>
+
+    <script>
+        const wrapper = document.querySelector('.wrapper'); //스크롤 메뉴 덮은것을 상수로 정의
+        const slideContents = document.querySelectorAll('.item');
+        const slideLength = slideContents.length;
+        const slideWidth = 350;
+        const slideMargin = 20;
+        const startNum = 0;
+        let offset = 0;
+        let curIndex = 0;       
+        
+
+        window.addEventListener('wheel',function(e){//윈도우에서 휠이벤트 발생
+            offset += Math.sign(e.deltaY)*60;//deltaY는 수직스크롤을 나타냄, Math.sign은 나타난 숫자를 1이나 -1로 표시
+            if(offset<0){
+                offset = 0;
+            }else if(offset > 10000 -window.innerWidth){
+                offset = 10000 - window.innerWidth;
+            }
+            wrapper.style.width = slideWidth*(slideLength + slideMargin)+'px';
+            wrapper.style.transform = `translateX(-${offset}px)`;
+
+        })
+
+    </script>
+</body>
+</html>
